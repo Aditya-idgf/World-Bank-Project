@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>World Bank Explorer | Bocaletto Luca</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts for a modern design -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="header">
+    <h1>World Bank Explorer</h1>
+
+  </div>
+  
+  <div class="container">
+    <!-- Select data scope -->
+    <div class="form-group">
+      <label for="dataScope">Select Data Scope:</label>
+      <select id="dataScope">
+        <option value="country" selected>Country</option>
+        <option value="continent">Continent/Region</option>
+        <option value="world">World</option>
+      </select>
+    </div>
+    
+    <!-- Country selection section (visible if Data Scope = Country) -->
+    <div class="form-group" id="countryGroup">
+      <label for="countrySelect">Select Country:</label>
+      <select id="countrySelect">
+        <option value="USA">United States</option>
+        <option value="CHN">China</option>
+        <option value="IND">India</option>
+        <option value="BRA">Brazil</option>
+        <option value="RUS">Russia</option>
+        <option value="ITA">Italy</option>
+        <option value="DEU">Germany</option>
+        <option value="FRA">France</option>
+        <option value="JPN">Japan</option>
+        <option value="GBR">United Kingdom</option>
+        <option value="CAN">Canada</option>
+        <option value="AUS">Australia</option>
+        <option value="KOR">Republic of Korea</option>
+        <option value="ESP">Spain</option>
+        <option value="MEX">Mexico</option>
+        <option value="ZAF">South Africa</option>
+        <option value="NGA">Nigeria</option>
+        <option value="EGY">Egypt</option>
+        <option value="IDN">Indonesia</option>
+        <option value="TUR">Turkey</option>
+      </select>
+    </div>
+    
+    <!-- Region selection section (visible if Data Scope = Continent) -->
+    <div class="form-group" id="continentGroup" style="display: none;">
+      <label for="continentSelect">Select Region:</label>
+      <select id="continentSelect">
+        <option value="EAP">Asia &amp; Pacific</option>
+        <option value="ECA">Europe</option>
+        <option value="LCN">Latin America &amp; Caribbean</option>
+        <option value="MNA">Middle East &amp; North Africa</option>
+        <option value="NAC">North America</option>
+        <option value="SAS">South Asia</option>
+        <option value="SSA">Sub-Saharan Africa</option>
+      </select>
+    </div>
+    
+    <!-- For World, no further selection is needed -->
+    
+    <!-- Selection of Indicators and Years -->
+    <div class="form-group">
+      <label for="indicatorSelect">Select Indicators (Ctrl-click to choose multiple):</label>
+      <select id="indicatorSelect" multiple></select>
+    </div>
+    <div class="form-group">
+      <label for="startYear">Start Year:</label>
+      <input type="number" id="startYear" value="2000" min="1960" max="2025">
+    </div>
+    <div class="form-group">
+      <label for="endYear">End Year:</label>
+      <input type="number" id="endYear" value="2020" min="1960" max="2025">
+    </div>
+    <button id="loadDataButton">Load Data</button>
+    
+    <hr>
+    
+    <!-- Visualization section: Line chart with Chart.js -->
+    <div class="chart-section">
+      <h2>Time Series Chart (Chart.js)</h2>
+      <canvas id="chartCanvas"></canvas>
+    </div>
+  </div>
+  
+  
+  <!-- Include Chart.js via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="main.js"></script>
+  
+  <!-- (Optional script to dynamically generate the continent dropdown if not present)
+       Here we have already inserted the HTML for the dropdown in the continentGroup block,
+       with the following friendly options:
+         - Asia & Pacific (EAP)
+         - Europe (ECA)
+         - Latin America & Caribbean (LCN)
+         - Middle East & North Africa (MNA)
+         - North America (NAC)
+         - South Asia (SAS)
+         - Sub-Saharan Africa (SSA)
+  -->
+</body>
+</html>

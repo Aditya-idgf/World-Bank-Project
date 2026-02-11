@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Oxygen', sans-serif;
+  background: #000;
+  color: #333;
+  line-height: 1.6;
+}
+.header {
+  color: #fff;
+  padding: 20px 0; 
+  text-align: center;
+  border-radius: 0px 0px 10px 10px ; 
+
+  background: rgb(30, 30, 30);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  /* border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 20px 10px rgba(255, 255, 255, 1);
+  position: relative; */
+  overflow: hidden;
+
+}
+
+header h1 { font-size: 2.5rem; }
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto;
+  color: #fff;
+  background: #232323;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.form-group { margin-bottom: 15px; }
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+select, select:active, select:focus, input:focus, button:focus {
+  outline: none;
+}
+select, input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  font-family: 'Oxygen', sans-serif;
+}
+select[multiple] { height: 150px; }
+button {
+  font-family: 'Oxygen', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  background: #000000;
+  color: #fff;
+  border: none;
+  box-shadow: 1px 1px 10px -5px white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 500ms;
+}
+button:hover { 
+  background: #f1f1f1;
+  color: #000000;
+}
+hr { margin: 30px 0; }
+.chart-section { margin-bottom: 40px; }
+canvas { width: 100% !important; max-height: 500px; }
+footer { text-align: center; margin: 20px 0; font-size: 0.9rem; color: #777; }
+@media (max-width:600px) {
+  header h1 { font-size: 1.8rem; }
+}
